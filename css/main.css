@@ -17,58 +17,71 @@ body {
 }
 
 .container {
-	border-radius: 20px;
+	border-radius: 10px;
 	background-color: var(--secendary-color);
-	width: 480px;
-	max-width: 100%;
+	max-width: 410px;
 	margin: 1.5rem auto;
-	padding: 12px 24px;
+	padding: 1rem 0;
 	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 .title {
-	font-size: 1.5rem;
-	margin-left: 25px;
+	display: flex;
+	align-items: center;
+	padding: 0 25px;
+}
+
+.title h1 {
+	font-size: 1.3rem;
 	color: var(--black-color);
-	font-style: italic;
-	font-weight: bold;
+	font-weight: 500;
 	text-decoration: line-through;
 }
 
+.title img {
+	width: 40px;
+	height: auto;
+}
+
 .container-add {
-	width: 25rem;
-	min-height: max-content;
-	padding: 0.9rem;
-	border-radius: 8px;
-	margin: 0.8rem auto;
-	background-color: var(--white-color);
-	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	max-width: 100%;
+	margin-top: 0.7rem;
+	padding: 0 25px;
 }
 
 .container-add .section-add {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
+	height: 45px;
+	position: relative;
+}
+
+.section-add img {
+	position: absolute;
+	width: 25px;
+	height: auto;
+	left: 0.7rem;
+	opacity: 0.4;
 }
 
 .section-add #text {
-	width: 18rem;
-	margin: 0 0.6rem 0 0;
-	padding: 0.4rem;
+	width: 100%;
+	height: 100%;
+	padding: 0 20px 0 45px;
+	font-size: 1rem;
 	color: var(--black-color);
-	outline: none;
 	border: 1.5px solid rgba(0, 0, 0, 0.2);
-	border-radius: 3px;
-	font-weight: 600;
-	font-size: 14px;
+	border-radius: 5px;
 	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	background-color: var(--secendary-color);
+	outline: none;
 }
 
 .section-add #text::placeholder {
 	color: var(--black-secendary);
-	opacity: 0.5;
-	font-weight: normal;
-	font-size: 14px;
+	opacity: 0.4;
+	font-size: 1rem;
 }
 
 .section-add #text:focus {
@@ -80,62 +93,62 @@ body {
 	animation: shake 100ms linear 10;
 }
 
-.section-add .btn-add {
-	width: 5.5rem;
+/* controls task */
+.controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 25px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.controls .filters {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.controls .btn-clear {
+	width: 5rem;
 	cursor: pointer;
 	padding: 0.4rem;
 	background-color: var(--primary-color);
 	border: 1.5px solid var(--primary-color);
 	border-radius: 3px;
-	font-size: 0.8rem;
 	transition: all 300ms;
 	color: var(--white-color);
 	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 
-.section-add .btn-add:hover {
-	transform: scale(1.02);
-	opacity: 0.95;
+.controls span {
+	font-size: 1rem;
 }
 
 /* container task */
 .container-task {
-	width: 25rem;
-	margin: 1rem auto;
-}
-
-.today-task {
-	font-size: 0.9rem;
-	font-weight: 500;
-	color: var(--black-secendary);
-	margin: auto;
-	display: none;
+	max-width: 100%;
+	padding: 0 25px;
 }
 
 .container-task .section-taks {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 20rem;
-	padding: 1em;
-	border-radius: 12px;
-	margin: 0.8rem auto 0;
-	background-color: var(--white-color);
-	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	padding: 1.2rem 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.section-taks.active {
+/* .section-taks.active {
 	background-color: var(--primary-color);
-}
+} */
 
-.section-taks.active .delete,
+/* .section-taks.active .delete,
 .section-taks.active .task-content {
 	color: var(--white-color);
-}
+} */
 
 .section-taks.active .task-content {
 	text-decoration: line-through;
-	font-style: italic;
 	color: var(--red-color);
 }
 
@@ -146,8 +159,7 @@ body {
 }
 
 .section-taks .task-content {
-	font-size: 0.8rem;
-	font-weight: 600;
+	font-size: 14px;
 	color: var(--black-color);
 	margin-left: 0.3rem;
 	text-transform: capitalize;
@@ -156,7 +168,6 @@ body {
 .section-taks #check {
 	margin-right: 0.6rem;
 	cursor: pointer;
-	accent-color: var(--white-color);
 }
 
 .section-taks .delete {

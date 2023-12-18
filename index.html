@@ -11,29 +11,42 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 		<link rel="stylesheet" href="./css/style.css" />
 		<title>To-Do-List</title>
 	</head>
 	<body>
 		<div class="container">
-			<h1 class="title">To-Do-List</h1>
+			<div class="title">
+				<h1>Todo List</h1>
+				<img src="./images/to-do-list.png" alt="icon title" />
+			</div>
 			<!-- container add -->
 			<div class="container-add">
 				<!-- section add -->
 				<div class="section-add">
+					<img src="./images/menu.png" alt="menu" />
 					<input
 						type="text"
 						id="text"
 						placeholder="Enter Your To-Do-List..."
 						autocomplete="off"
 					/>
-					<button class="btn-add">add</button>
 				</div>
 			</div>
-			<!-- container task -->
-			<div class="container-task">
-				<h4 class="today-task">Today list :</h4>
+
+			<!-- section controls -->
+			<div class="controls">
+				<div class="filters">
+					<span>All</span>
+					<span>Pending</span>
+					<span>Completed</span>
+				</div>
+				<button class="btn-clear">Clear all</button>
 			</div>
+
+			<!-- container task -->
+			<div class="container-task"></div>
 		</div>
 		<script type="module" src="./js/script.js"></script>
 	</body>
