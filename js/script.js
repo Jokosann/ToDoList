@@ -7,14 +7,6 @@ document.addEventListener("keyup", function (event) {
 		if (input.value.length > 0) {
 			containerTask.innerHTML += getTask(input.value);
 
-			const check = document.querySelectorAll(".check");
-			check.forEach((e) => {
-				e.addEventListener("click", function () {
-					e.parentElement.parentElement.classList.toggle("active");
-				});
-				e.parentElement.parentElement.classList.remove("active");
-			});
-
 			input.value = "";
 		} else {
 			input.classList.add("eror");
@@ -33,15 +25,13 @@ document.addEventListener("click", function (e) {
 
 function getTask(n) {
 	return /*html*/ `
-	<div class="section-taks">
-		<div class="label">
-			<input type="checkbox" name="check" id="check" class="check" />
-			<div class="task-content">
-				<span>${n}</span>
-			</div>
-		</div>
-		<div class="delete">
-			<i class="fa-solid fa-trash-can delete-icon"></i>
-		</div>
-	</div>`;
+				<li class="section-taks">
+					<label for="1" class="checkbox-wrapper-11">
+						<input id="1" type="checkbox" name="r" value="2" />
+						<span class="task-content">${n}</span>
+					</label>
+					<div class="delete">
+            <i class="uil uil-trash delete-icon"></i>
+					</div>
+				</li>`;
 }
