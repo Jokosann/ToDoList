@@ -126,7 +126,7 @@ body {
 	cursor: pointer;
 }
 
-.controls span:first-of-type {
+.controls span.active {
 	color: var(--primary-color);
 }
 
@@ -143,6 +143,11 @@ body {
 	align-items: center;
 	list-style: none;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.container-task .clear {
+	display: block;
+	font-size: 14px;
+	margin-top: 1rem;
 }
 
 .section-taks .delete {
