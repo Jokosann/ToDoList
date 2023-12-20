@@ -34,7 +34,7 @@ body {
 .title h1 {
 	font-size: 1.2rem;
 	color: var(--black-color);
-	opacity: 0.8;
+	opacity: 0.9;
 	text-decoration: line-through;
 }
 

@@ -6,7 +6,7 @@ A brief description of what this project does and I used modern HTML, CSS and JS
 
 Here we have project screenshot:
 
-![screenshot](<screenshot/To-Do-List%20(2).png>)
+![screenshot](<screenshot/To-Do-List%20(3).png>)
 
 ## Tech Stack
 
