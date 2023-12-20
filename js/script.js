@@ -46,10 +46,8 @@ filterSpan.forEach((btn) => {
 	btn.addEventListener("click", function () {
 		// delete class active in span
 		document.querySelector("span.active").classList.remove("active");
-
 		// add class active
 		btn.classList.add("active");
-
 		// show task => parameter btn.id in todos
 		showTodo(btn.id);
 	});
@@ -100,7 +98,10 @@ function showTodo(filter) {
 								</li>`;
 			}
 		});
+		taskBox.innerHTML = litag || `<span class="clear">You don't have any task here</span>`;
+		taskBox.offsetHeight > 202.67
+			? taskBox.classList.add("overflow")
+			: taskBox.classList.remove("overflow");
 	}
-	taskBox.innerHTML = litag || `<span class="clear">You don't have any task here</span>`;
 }
 showTodo("all");

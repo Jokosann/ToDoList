@@ -133,7 +133,25 @@ body {
 /* container task */
 .container-task {
 	max-width: 100%;
+	height: fit-content;
+	max-height: 202.67px;
 	padding: 0 25px;
+}
+
+.container-task.overflow {
+	overflow-y: scroll;
+}
+
+.container-task::-webkit-scrollbar {
+	width: 10px;
+}
+.container-task::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 25px;
+}
+.container-task::-webkit-scrollbar-thumb {
+	background: #e0e0e0;
+	border-radius: 25px;
 }
 
 .container-task .section-taks {

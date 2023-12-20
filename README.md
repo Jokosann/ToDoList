@@ -10,7 +10,9 @@ Here we have project screenshot:
 
 ## Tech Stack
 
-- Html, Css, Javascript
+- Html
+- Css
+- Javascript
 
 ## Authors
 
