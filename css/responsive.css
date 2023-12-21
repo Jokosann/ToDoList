@@ -1,0 +1,38 @@
+@media screen and (max-width: 480px) {
+	.container {
+		width: calc(100vw - 2rem);
+		margin-top: 137px;
+	}
+	.title {
+		height: 35px;
+	}
+	.title h1 {
+		font-size: 1.2rem;
+	}
+	.title img {
+		width: 20px;
+	}
+	.container-add .section-add {
+		height: 40px;
+	}
+	.section-add #text,
+	.section-add #text::placeholder {
+		font-size: 12px;
+	}
+	.controls .filters {
+		gap: 14px;
+	}
+	.controls span {
+		font-size: 12px;
+	}
+	.controls .btn-clear {
+		width: 4rem;
+		font-size: 12px;
+	}
+	.checkbox-wrapper-11 span {
+		font-size: 12px;
+	}
+	.section-taks .delete {
+		font-size: 14px;
+	}
+}
