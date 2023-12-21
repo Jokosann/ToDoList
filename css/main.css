@@ -169,12 +169,13 @@ body {
 }
 
 .section-taks .delete {
+	height: 100%;
 	cursor: pointer;
-	width: 10%;
+	width: 15%;
 	font-size: 18px;
 	color: var(--primary-color);
+	gap: 0.7rem;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 }
 

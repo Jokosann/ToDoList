@@ -1,9 +1,12 @@
-// variable
+// variable DOM
 const taskInput = document.querySelector("#text"),
 	taskBox = document.querySelector(".container-task"),
 	filterSpan = document.querySelectorAll(".filters span"),
 	clearAll = document.querySelector(".btn-clear");
 
+// variable global
+let editId;
+let isEditTask = false;
 //! menyimpan hasil input user dilocalstorage berupa JSON
 let todos = JSON.parse(localStorage.getItem("todo-list"));
 
@@ -13,21 +16,28 @@ taskInput.addEventListener("keyup", function (event) {
 		// input value
 		let usertask = taskInput.value;
 		if (taskInput.value.length > 0) {
-			// delete inpur user
-			taskInput.value = "";
-			// check if !todos
-			if (!todos) {
-				todos = [];
+			// jika edit true
+			if (!isEditTask) {
+				// delete inpur user
+				taskInput.value = "";
+				// check if !todos
+				if (!todos) {
+					todos = [];
+				}
+				// todo: todos
+				let taskInfo = {
+					name: usertask,
+					status: "pending",
+				};
+				todos.push(taskInfo);
+			} else {
+				// jika edit false
+				isEditTask = false;
+				todos[editId].name = usertask;
 			}
-			// todo: todos
-			let taskInfo = {
-				name: usertask,
-				status: "pending",
-			};
-			todos.push(taskInfo);
-			// ? set item in json localstorage
+			// set item in json localstorage
 			localStorage.setItem("todo-list", JSON.stringify(todos));
-			// memanggil function showtodo()
+			// function showtodo()
 			showTodo(document.querySelector("span.active").id);
 		} else {
 			// add class in input user
@@ -79,6 +89,16 @@ function deleteTask(deleted) {
 	showTodo(document.querySelector("span.active").id);
 }
 
+function editTask(taskId, taskName) {
+	/*
+		output: index of todos, name of task eventClick
+	*/
+	isEditTask = true;
+	editId = taskId;
+	// input user
+	taskInput.value = taskName;
+}
+
 // show task in client
 function showTodo(filter) {
 	let litag = "";
@@ -92,13 +112,15 @@ function showTodo(filter) {
 				} />
 										<span class="task-content">${todo.name}</span>
 									</label>
-									<div class="delete" onclick="deleteTask(${id})">
-										<i class="uil uil-trash delete-icon"></i>
+									<div class="delete" >
+										<i onclick="editTask(${id}, '${todo.name}')" class="uil uil-pen"></i>
+										<i onclick="deleteTask(${id})" class="uil uil-trash delete-icon"></i>
 									</div>
 								</li>`;
 			}
 		});
 		taskBox.innerHTML = litag || `<span class="clear">You don't have any task here</span>`;
+		// for scroll-Y of container-task if height > 202.67px
 		taskBox.offsetHeight > 202.67
 			? taskBox.classList.add("overflow")
 			: taskBox.classList.remove("overflow");
