@@ -16,10 +16,10 @@ taskInput.addEventListener("keyup", function (event) {
 		// input value
 		let usertask = taskInput.value;
 		if (taskInput.value.length > 0) {
+			// delete inpur user
+			taskInput.value = "";
 			// jika edit true
 			if (!isEditTask) {
-				// delete inpur user
-				taskInput.value = "";
 				// check if !todos
 				if (!todos) {
 					todos = [];
@@ -97,6 +97,8 @@ function editTask(taskId, taskName) {
 	editId = taskId;
 	// input user
 	taskInput.value = taskName;
+	taskInput.focus();
+	showTodo("all");
 }
 
 // show task in client
@@ -112,16 +114,20 @@ function showTodo(filter) {
 				} />
 										<span class="task-content">${todo.name}</span>
 									</label>
-									<div class="delete" >
-										<i onclick="editTask(${id}, '${todo.name}')" class="uil uil-pen"></i>
-										<i onclick="deleteTask(${id})" class="uil uil-trash delete-icon"></i>
+									<div class="settings" >
+										<div onclick="editTask(${id}, '${todo.name}')" class="edit" >
+											<i class="uil uil-pen"></i>
+										</div>
+										<div onclick="deleteTask(${id})" class="delete">
+											<i class="uil uil-trash delete-icon"></i>
+										</div>
 									</div>
 								</li>`;
 			}
 		});
 		taskBox.innerHTML = litag || `<span class="clear">You don't have any task here</span>`;
 		// for scroll-Y of container-task if height > 202.67px
-		taskBox.offsetHeight > 202.67
+		taskBox.offsetHeight > 204
 			? taskBox.classList.add("overflow")
 			: taskBox.classList.remove("overflow");
 	}

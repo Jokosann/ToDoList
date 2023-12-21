@@ -20,7 +20,7 @@ body {
 	border-radius: 10px;
 	background-color: var(--secendary-color);
 	max-width: 410px;
-	margin: 2rem auto;
+	margin: 5rem auto;
 	padding: 1rem 0;
 	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
@@ -54,7 +54,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 45px;
+	height: 40px;
 	position: relative;
 }
 
@@ -99,7 +99,8 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem 25px;
+	height: 60px;
+	padding: 0 25px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -116,9 +117,16 @@ body {
 	background-color: var(--primary-color);
 	border: 1.5px solid var(--primary-color);
 	border-radius: 3px;
-	transition: all 300ms;
+	transition: all 100ms;
 	color: var(--white-color);
 	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.controls .btn-clear:active {
+	transform: scale(0.9);
+	opacity: 0.9;
+	color: var(--black-color);
+	font-size: 12px;
 }
 
 .controls span {
@@ -128,14 +136,13 @@ body {
 
 .controls span.active {
 	color: var(--primary-color);
+	transition: all 300ms ease;
 }
 
 /* container task */
 .container-task {
 	max-width: 100%;
-	height: fit-content;
-	max-height: 202.67px;
-	padding: 0 25px;
+	max-height: 205px;
 }
 
 .container-task.overflow {
@@ -166,17 +173,27 @@ body {
 	display: block;
 	font-size: 14px;
 	margin-top: 1rem;
+	padding-left: 25px;
 }
 
-.section-taks .delete {
+.section-taks .settings {
 	height: 100%;
 	cursor: pointer;
-	width: 15%;
+	width: 6rem;
 	font-size: 18px;
 	color: var(--primary-color);
-	gap: 0.7rem;
 	display: flex;
+	padding-right: 25px;
 	align-items: center;
+}
+
+.settings .edit,
+.settings .delete {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	height: 100%;
 }
 
 @keyframes shake {
@@ -206,12 +223,14 @@ body {
 	border-radius: var(--border-radius);
 	position: relative;
 	display: grid;
-	width: 85%;
+	width: 100%;
 	height: 100%;
+	padding: 0 25px;
 	margin-right: 1rem;
 	grid-template-columns: 30px auto;
 	align-items: center;
 	cursor: pointer;
+	overflow: auto;
 }
 .checkbox-wrapper-11 span {
 	color: var(--text);
