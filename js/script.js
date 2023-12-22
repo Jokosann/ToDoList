@@ -9,6 +9,12 @@ let editId;
 let isEditTask = false;
 //! menyimpan hasil input user dilocalstorage berupa JSON
 let todos = JSON.parse(localStorage.getItem("todo-list"));
+todos = [
+	{
+		name: "Your List",
+		status: "pending",
+	},
+];
 
 // event ketika user input
 taskInput.addEventListener("keyup", function (event) {
@@ -20,10 +26,6 @@ taskInput.addEventListener("keyup", function (event) {
 			taskInput.value = "";
 			// jika edit true
 			if (!isEditTask) {
-				// check if !todos
-				if (!todos) {
-					todos = [];
-				}
 				// todo: todos
 				let taskInfo = {
 					name: usertask,
